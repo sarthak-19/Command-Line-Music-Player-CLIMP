@@ -1,5 +1,5 @@
 # Command Line Music Player CLIMP
- This is a mini project with C++ to create a command line based music player using MciSendStrings
+ This is a mini project with C++ to create a command line based music player using mciSendStrings
 
 **Sample Screenshots**
 
@@ -28,13 +28,16 @@ The main objective is to play any non variable bit rate mp3 file using mciSendSt
 It's a Windows Multimedia Library
 
 2. If you are using code blocks or Visual Studio IDE you can directly add path of lwinmm in linker library options.
-3. If you want to add more songs you can add it in songs folder after converting mp3 files to mono bitrate.
+3. If you want to add more songs, place constant bitrate mp3 files in the 'songs' folder which is in the same directory as the main.cpp file (up to 9 mp3s are supported).
+Song filename must follow this convention : (artistname)-(songname)-(duration).mp3 without any whitespace.
+Example - OzzyOsbourne-Dreamer-4.44.mp3
+Note - Space should not be used in filenames.
 
 **Problem Faced :**
 
-1. MciSendStrings documentation by Microsoft was very vague and lacked crucial informations like examples to demonstrate the working of its function.
-2. MciSendStrings has 2 versions for its string command parameters. One accepts ANSI encoded characters while other accepts UNICODE and there was no proper information available regarding this.
-3. To use MciSendStrings we need to link a library called -lwinmm (Windows Multimedia Lib) but there was no direct way to implement this Visual Studio Code as all the development work is done of Visual Studio IDE.
+1. mciSendStrings documentation by Microsoft was very vague and lacked crucial informations like examples to demonstrate the working of its function.
+2. mciSendStrings has 2 versions for its string command parameters. One accepts ANSI encoded characters while other accepts UNICODE and there was no proper information available regarding this.
+3. To use mciSendStrings we need to link a library called -lwinmm (Windows Multimedia Lib) but there was no direct way to implement this Visual Studio Code as all the development work is done of Visual Studio IDE.
 4. Windows Media Library provides very limited options in regards to the attributes of media file such as it could only play mono bit rate audio files with greatly reduced sample rate and hence offering poor sound quality.
 
 We have also implemented error handling so that is any audio file could not be played for any reason the program will automatically skip to the next music in the list.
